@@ -1,4 +1,31 @@
-<hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+<input [(ngModel)]="a" type="number"> ^
+<input [(ngModel)]="b" type="number"> =
 </p>
+
+<button (click)="ubah()">Hitung</button>
+<button (click)="clear()">Clear</button>
+
+<p *ngIf="status">
+  Hasil = {{hitung(a,b)}}
+  <span >
+
+  </span>
+  <span *ngFor>
+
+  </span>
+</p>
+
+<ng-template
+  *ngIf = "hasil%2==0; then genap; else ganjil">
+</ng-template>
+
+<ng-template #genap>
+  <p>POLA B</p>
+  {{hasilGenap}}
+</ng-template>
+
+<ng-template #ganjil>
+  <p>POLA A</p>
+  <p> ini not Show Block </p>
+</ng-template>
