@@ -3,8 +3,12 @@
 <input [(ngModel)]="b" type="number"> =
 </p>
 
-Hasil = {{hitung(a,b)}}<br>
+<button (click)="ubah()">Hitung</button>
 <button (click)="clear()">Clear</button>
-<div *ngFor="let num of pola; let i=index">
-  {{num}}
+<br><br>
+<div *ngIf="status==1">
+  Hasil = {{hasil}}<br>
+  <div *ngFor="let item of pola">
+    {{item}}
+  </div>
 </div>

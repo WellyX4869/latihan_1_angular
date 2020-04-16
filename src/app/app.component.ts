@@ -12,27 +12,56 @@ export class AppComponent  {
   status = 0;
   hasil = 0;
   loopGenap = 0;
-  hasilGenap = '';
   hasilGanjil = [];
   pola = [];
-  ubah(){
-    this.status = 1;
-  }
 
   hitung(a, b){
     this.hasil = Math.pow(a,b);
-     for(var i=parseInt(b) - 1;i<(this.hasil);i++){
-        for(var j=0;j<=i;j++){
-          this.hasilGenap += "*"
+    this.status = 1;
+    this.pola = [];
+    var str="";
+    if(this.hasil%2 == 0){
+      this.pola.push("POLA B");
+      for(var i=b;i<=(this.hasil);i++){
+        for(var j=0;j<i;j++){
+          str += "*"
         }
-        this.pola.push(this.hasilGenap)
-        this.hasilGenap = ""
+        this.pola.push(str)
+        str = "";
       }
+    }else{
+      this.pola.push("POLA A");
+      for(var i=b; i>=0; i--){
+        for(var j = 0; j<i; j++){
+          str+='*';
+        }
+        this.pola.push(str)
+        str='';
+      }
+      var temp = [];
+      var i;
+      for(i=0; i<a; i++){
+        for(var j = 0; j<=i; j++){
+          str+='O';
+        }
+        temp.push(str);
+        str = '';
+      }
+      for(i = 0; i<temp.length; i++){
+        this.pola[i+1]+=temp[i];
+      }
+    }
     return this.hasil;
+  }
+
+  ubah(){
+    this.status = 1;
+    this.hitung(this.a,this.b);
   }
 
   clear(){
     this.a = 0;
+    this.status = 0;
     this.b = 0;
   }
 }
