@@ -35,7 +35,7 @@ export class AppComponent  {
 
     }
     this.status = 1;
-    return this.hasil;
+    return Math.pow(a,b);
   }
 
   clear(){

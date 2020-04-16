@@ -8,19 +8,4 @@
 
 <p *ngIf="status">
   Hasil = {{hitung(a,b)}}
-  <ng-template
-    *ngIf = "hasil%2==0; then genap; else ganjil">
-  </ng-template>
-
-  <ng-template #genap>
-  <p>POLA B</p>
-  <div *ngFor="let res of pola; let i=index">
-  {{res}}
-  </div>
-  </ng-template>
-
-  <ng-template #ganjil>
-    <p>POLA A</p>
-    
-  </ng-template>
 </p>
