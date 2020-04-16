@@ -8,24 +8,19 @@
 
 <p *ngIf="status">
   Hasil = {{hitung(a,b)}}
-  <span >
+  <ng-template
+    *ngIf = "hasil%2==0; then genap; else ganjil">
+  </ng-template>
 
-  </span>
-  <span *ngFor>
-
-  </span>
-</p>
-
-<ng-template
-  *ngIf = "hasil%2==0; then genap; else ganjil">
-</ng-template>
-
-<ng-template #genap>
+  <ng-template #genap>
   <p>POLA B</p>
-  {{hasilGenap}}
-</ng-template>
+  <div *ngFor="let res of pola; let i=index">
+  {{res}}
+  </div>
+  </ng-template>
 
-<ng-template #ganjil>
-  <p>POLA A</p>
-  <p> ini not Show Block </p>
-</ng-template>
+  <ng-template #ganjil>
+    <p>POLA A</p>
+    
+  </ng-template>
+</p>

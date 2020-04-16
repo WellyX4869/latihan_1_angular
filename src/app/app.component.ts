@@ -14,7 +14,7 @@ export class AppComponent  {
   loopGenap = 0;
   hasilGenap = '';
   hasilGanjil = [];
-
+  pola = [];
   ubah(){
     this.status = 1;
   }
@@ -28,11 +28,13 @@ export class AppComponent  {
         for(var j = b; b<this.hasil; j++){
           this.hasilGenap += '*';
         }
-        this.hasilGenap+= '\n';
+        this.pola.push(this.hasilGenap)
+        this.hasilGenap = '';
       }
     }else{
 
     }
+    this.status = 1;
     return this.hasil;
   }
 
