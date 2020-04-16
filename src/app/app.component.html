@@ -3,9 +3,5 @@
 <input [(ngModel)]="b" type="number"> =
 </p>
 
-<button (click)="ubah()">Hitung</button>
+Hasil = {{hitung(a,b)}}
 <button (click)="clear()">Clear</button>
-
-<p *ngIf="status">
-  Hasil = {{hitung(a,b)}}
-</p>
