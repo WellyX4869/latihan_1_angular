@@ -21,7 +21,14 @@ export class AppComponent  {
 
   hitung(a, b){
     this.hasil = Math.pow(a,b);
-    return Math.pow(a,b);
+     for(var i=parseInt(b) - 1;i<(this.hasil);i++){
+        for(var j=0;j<=i;j++){
+          this.hasilGenap += "*"
+        }
+        this.pola.push(this.hasilGenap)
+        this.hasilGenap = ""
+      }
+    return this.hasil;
   }
 
   clear(){
